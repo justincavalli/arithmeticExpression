@@ -53,7 +53,7 @@ class ListQueue:
         # returns true if the queue is empty
         return self._size == 0
 
-    def resize(self, multiplier):
+    def _resize(self, multiplier):
         # make new queue with size based on the multiplier
         newQueue = [None] * (multiplier * len(self._queue))
 
