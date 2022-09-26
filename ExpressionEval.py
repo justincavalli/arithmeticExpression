@@ -50,19 +50,18 @@ def iterateExpression():
     for index in range(len(expression)):
         
         character = expression[index]
-        
         if character in digits:
             # add the digit to the current string of digits being tracked
             num+= character
 
             # check if it's the last digit in the current number
-            if(index + 1 == len(expression) or [index+1] not in digits):
+            if(index + 1 == len(expression) or expression[index+1] not in digits):
                 # push the number or evaluate now if the operator is *, /
-                if(expStack.peep() == '*' or expStack.peep() == '/'):
+                if(not expStack.__is_empty__() and (expStack.peep() == '*' or expStack.peep() == '/')):
                     # evaluate and push back on the stack
                     operator = expStack.pop()
                     leftOperand = expStack.pop()
-                    expStack.push(leftOperand, operator, num)
+                    expStack.push(evaluate(leftOperand, operator, num))
                 else:
                     # push onto the stack but don't evaluate yet
                     expStack.push(num)
@@ -91,6 +90,10 @@ def iterateExpression():
     return expStack.pop()
 
 def evaluate(leftOperand, operator, rightOperand):
+    # make sure they are casted as numbers
+    leftOperand = float(leftOperand)
+    rightOperand = float(rightOperand)
+    
     if operator == '+':
         return leftOperand + rightOperand
     elif operator == '-':
@@ -103,5 +106,4 @@ def evaluate(leftOperand, operator, rightOperand):
         # unknown operator
         raise Exception('invalid character in expression')
 
-if __name__ == "__iterateExpression__":
-    iterateExpression()
+print(iterateExpression())
