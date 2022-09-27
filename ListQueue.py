@@ -32,7 +32,7 @@ class ListQueue:
         element = self._queue[self._fIndex]
         self._queue[self._fIndex] = None
         # increment the front index, accounting for wrapping to the beginning of the list
-        self._fIndex = (self._fIndex + 1) % self._size
+        self._fIndex = (self._fIndex + 1) % len(self._queue)
 
         # update the size and return
         self._size -= 1

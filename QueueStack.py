@@ -3,21 +3,22 @@ import ListQueue
 class QueueStack:
     # implement a Stack using two instances of the Queue class
 
-    def __init__():
+    def __init__(self):
         # implement later
-        self._data = ListQueue()
+        self._data = ListQueue.ListQueue()
 
     def push(self, element):
         # pushes element in the stack
-        tempQueue = ListQueue()
+        
+        # add the element to a new queue
+        tempQueue = ListQueue.ListQueue()
+        tempQueue.enqueue(element)
 
-        # use second queue to reverse the order of elements
-        for index in range(self._data.size()):
+        # reverse the order utilizing these two queues
+        while not self._data.is_empty():
             tempQueue.enqueue(self._data.dequeue())
 
-        # reassign the data to the new queue
         self._data = tempQueue
-
 
     def pop(self):
         # pops i.e. removes the latest element from the stack and returns it
