@@ -1,3 +1,8 @@
+# Name: Justin Cavalli
+# Date: last edit 9/27/2022
+# Description: This program implements the functionality of a Queue data
+#              structure using a list.
+
 class ListQueue:
 
     # queue will need to be resized, assign an initial size

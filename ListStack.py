@@ -1,3 +1,8 @@
+# Name: Justin Cavalli
+# Date: last edit 9/27/2022
+# Description: This program implements the functionality of a Stack data
+#              structure using a list.
+
 class ListStack:
     def __init__(self):
         # a python list stores the data in the stack

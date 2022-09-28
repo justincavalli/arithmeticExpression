@@ -1,3 +1,8 @@
+# Name: Justin Cavalli
+# Date: last edit 9/27/2022
+# Description: This program implements the functionality of a Stack data
+#              structure using two ListQueues
+
 import ListQueue
 
 class QueueStack:

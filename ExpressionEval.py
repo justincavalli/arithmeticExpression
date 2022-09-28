@@ -1,3 +1,8 @@
+# Name: Justin Cavalli
+# Date: last edit 9/27/2022
+# Description: This program uses the previously implemented ListStack
+#              to evaluate arithmetic expressions
+
 import sys
 import ListStack
          
